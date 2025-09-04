@@ -1,17 +1,18 @@
-## Rest Full API Node JS AI Generator
+### Rest Full API Node JS AI Generator
 
-### Intall Depedencies
+#### Intall Depedencies
 ```
 npm install
 ```
-### Run Server
+#### Run Server
 ```
 npm run dev
 ```
 
-### Run Unit Test
+#### Run Unit Test
+<span>contoh test users :</span>
 ```
-npm run test nama-folder/test.js
+npm test --tests/users.test.js
 ```
 
-By : Pieter 28
+###### Copyright : Pieter 28
