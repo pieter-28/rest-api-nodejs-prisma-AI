@@ -1,0 +1,34 @@
+### Health check
+GET http://localhost:3000/
+
+### =========================
+### Contacts
+### =========================
+
+### Create contact for user (ubah userId sesuai hasil create user)
+POST http://localhost:3000/api/users/1/contacts
+Content-Type: application/json
+
+{
+  "phone": "+628123456789",
+  "label": "mobile"
+}
+
+### List contacts by user
+GET http://localhost:3000/api/users/1/contacts
+
+### Get contact by id (ubah :id sesuai hasil create contact)
+GET http://localhost:3000/api/contacts/1
+
+### Update contact
+PATCH http://localhost:3000/api/contacts/1
+Content-Type: application/json
+
+{
+  "label": "office"
+}
+
+### Delete contact
+DELETE http://localhost:3000/api/contacts/1
+
+#install rest client untuk vscode

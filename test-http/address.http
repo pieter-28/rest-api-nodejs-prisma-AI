@@ -1,0 +1,37 @@
+### Health check
+GET http://localhost:3000/
+
+### =========================
+### Addresses
+### =========================
+
+### Create address for contact (ubah contactId sesuai hasil create contact)
+POST http://localhost:3000/api/contacts/1/addresses
+Content-Type: application/json
+
+{
+  "line1": "Jl. Melati No. 5",
+  "city": "Jakarta",
+  "country": "ID",
+  "postalCode": "10110"
+}
+
+### List addresses by contact
+GET http://localhost:3000/api/contacts/1/addresses
+
+### Get address by id (ubah :id sesuai hasil create address)
+GET http://localhost:3000/api/addresses/1
+
+### Update address
+PATCH http://localhost:3000/api/addresses/1
+Content-Type: application/json
+
+{
+  "city": "Bandung",
+  "postalCode": "40111"
+}
+
+### Delete address
+DELETE http://localhost:3000/api/addresses/1
+
+#install rest client untuk vscode

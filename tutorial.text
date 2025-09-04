@@ -1,0 +1,66 @@
+#Prasyarat: Node.js v18+ & npm.
+
+mkdir node-rest-prisma && cd node-rest-prisma
+npm init -y
+npm i express zod @prisma/client
+npm i -D prisma nodemon jest supertest cross-env
+npx prisma init --datasource-provider mysql
+
+# .env
+DATABASE_URL="mysql://root:passwordAnda@localhost:3306/tableName"
+PORT=3000
+NODE_ENV=development
+
+#package.json
+#Catatan: ("type": "module").
+{
+    "name": "node-rest-prisma",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "migrate": "prisma migrate dev --name init",
+    "test": "cross-env NODE_ENV=test jest --runInBand"
+},
+    "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "testMatch": ["**/__tests__/**/*.test.js"]
+    }
+}
+
+#setup prisma database migrate
+#run migrate prisma
+npx prisma migrate dev --name init
+
+#structure Folder (Sesuai kebutuhan)
+node-rest-prisma/
+├─ prisma/
+│ ├─ schema.prisma
+│ └─ dev.db
+├─ src/
+│ ├─ app.js
+│ ├─ server.js
+│ ├─ prisma.js
+│ ├─ middlewares/
+│ │ └─ error.js
+│ ├─ validators/
+│ │ ├─ users.js
+│ │ ├─ contacts.js
+│ │ └─ addresses.js
+│ ├─ routes/
+│ │ ├─ users.js
+│ │ ├─ contacts.js
+│ │ └─ addresses.js
+│ └─ controllers/
+│ ├─ users.js
+│ ├─ contacts.js
+│ └─ addresses.js
+└─ __tests__/
+└─ api.test.js
+
+#run server
+npm run dev
+npm run start
+npm run test

@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "REST Prisma API",
+    "_postman_id": "6d9a3f3e-8a77-4c6c-bf8e-1234567890ab",
+    "description": "Collection untuk test Users, Contacts, dan Addresses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Contacts",
+      "item": [
+        {
+          "name": "Create Contact",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+628123456789\",\n  \"label\": \"mobile\"\n}"
+            },
+            "url": "http://localhost:3000/api/users/1/contacts"
+          }
+        },
+        {
+          "name": "List Contacts by User",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/users/1/contacts"
+          }
+        },
+        {
+          "name": "Get Contact by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/contacts/1"
+          }
+        },
+        {
+          "name": "Update Contact",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"label\": \"office\"\n}" },
+            "url": "http://localhost:3000/api/contacts/1"
+          }
+        },
+        {
+          "name": "Delete Contact",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/contacts/1"
+          }
+        }
+      ]
+    }
+  ]
+}

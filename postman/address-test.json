@@ -1,0 +1,74 @@
+{
+  "info": {
+    "name": "REST Prisma API",
+    "_postman_id": "6d9a3f3e-8a77-4c6c-bf8e-1234567890ab",
+    "description": "Collection untuk test Users, Contacts, dan Addresses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Addresses",
+      "item": [
+        {
+          "name": "Create Address",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"line1\": \"Jl. Melati No. 5\",\n  \"city\": \"Jakarta\",\n  \"country\": \"ID\",\n  \"postalCode\": \"10110\"\n}"
+            },
+            "url": "http://localhost:3000/api/contacts/1/addresses"
+          }
+        },
+        {
+          "name": "List Addresses by Contact",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/contacts/1/addresses"
+          }
+        },
+        {
+          "name": "Get Address by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:3000/api/addresses/1"
+          }
+        },
+        {
+          "name": "Update Address",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"city\": \"Bandung\",\n  \"postalCode\": \"40111\"\n}"
+            },
+            "url": "http://localhost:3000/api/addresses/1"
+          }
+        },
+        {
+          "name": "Delete Address",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/addresses/1"
+          }
+        }
+      ]
+    }
+  ]
+}

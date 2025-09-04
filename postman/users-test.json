@@ -1,0 +1,74 @@
+{
+  "info": {
+    "name": "REST Prisma API",
+    "_postman_id": "6d9a3f3e-8a77-4c6c-bf8e-1234567890ab",
+    "description": "Collection untuk test Users, Contacts, dan Addresses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Budi\",\n  \"email\": \"budi@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api"]
+            }
+          }
+        },
+        {
+          "name": "List Users",
+          "request": { "method": "GET", "url": "http://localhost:3000/api" }
+        },
+        {
+          "name": "Get User by ID",
+          "request": { "method": "GET", "url": "http://localhost:3000/api/1" }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Budi Update\"\n}"
+            },
+            "url": "http://localhost:3000/api/1"
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:3000/api/1"
+          }
+        }
+      ]
+    }
+  ]
+}

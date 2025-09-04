@@ -1,0 +1,34 @@
+### Health check
+GET http://localhost:3000/
+
+### =========================
+### Users
+### =========================
+
+### Create user
+POST http://localhost:3000/api
+Content-Type: application/json
+
+{
+  "name": "Pieter",
+  "email": "pieter@example.com"
+}
+
+### List users
+GET http://localhost:3000/api
+
+### Get user by id (ubah :id sesuai hasil create user)
+GET http://localhost:3000/api/1
+
+### Update user
+PATCH http://localhost:3000/api/1
+Content-Type: application/json
+
+{
+  "name": "Pieter Update"
+}
+
+### Delete user
+DELETE http://localhost:3000/api/1
+
+#install rest client untuk vscode
